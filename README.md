@@ -8,7 +8,7 @@ A sample demonstrating how to deploy a streamlit-chatbot (LLM-powered) User Inte
 
 ## Pre-requisites
 
-1. [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+1. Azure CLI install instructions [here](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
 2. Azure web app
 3. Azure Container Registry
 
