@@ -1,0 +1,11 @@
+---
+streamlit:
+  title: "Applied AI team's bot"
+  tab_title: "LLM bot"
+  logo: "./streamlit_app/images/Microsoft_logo.png"
+  page_icon: "./streamlit_app/images/Microsoft_logo.png"
+  avatar: "./streamlit_app/images/openai.png"
+  assistant_intro_message: "Hi there :wave:, I'm an AI assistant powered by Large Language Models. How can I help?" 
+  about: "this is a demo bot, author: Applied AI team"
+azure:
+  dummy: "test"
