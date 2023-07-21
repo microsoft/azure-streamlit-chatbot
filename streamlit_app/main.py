@@ -1,6 +1,11 @@
 import streamlit as st
 import yaml
-from llm_bot import dummy_bot, echo_bot #contains logic for bot's response
+import os
+import openai
+
+from pg_qna import qna_llm
+
+
 
 # Read config yaml file
 with open('./streamlit_app/config.yml', 'r') as file:
@@ -49,7 +54,7 @@ if prompt := st.chat_input("Send a message"):
     with st.chat_message("user"):
         st.markdown(prompt)
     # Get bot response    
-    response = echo_bot(prompt)
+    response = qna_llm(prompt)
     with st.chat_message("assistant", avatar=config['streamlit']['avatar']):
         st.markdown(response)
     # Add assistant response to chat history

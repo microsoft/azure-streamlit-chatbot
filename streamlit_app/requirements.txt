@@ -1,3 +1,14 @@
 streamlit
 requests
 pyyaml
+psycopg2
+python-dotenv
+openai
+pandas
+numpy
+pgvector
+langchain
+docx2txt
+docx2pdf
+tiktoken
+scikit-learn

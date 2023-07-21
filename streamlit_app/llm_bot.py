@@ -7,3 +7,6 @@ def echo_bot(msg):
 
 def simple_llm(msg):
     return 'Simple LLM: {}'.format(msg)
+
+def qna_llm(msg):
+    return 
