@@ -29,6 +29,7 @@ A sample demonstrating how to deploy a streamlit-chatbot (LLM-powered) User Inte
     ├── images
     ├── llm_bot.py
     ├── main.py
+    ├── llm_pgvector.env
     └── requirements.txt
 ```
 
@@ -38,6 +39,7 @@ A sample demonstrating how to deploy a streamlit-chatbot (LLM-powered) User Inte
    2. `llm_bot.py` contains the chatbot response logic.
    3. `config.yml` containes all configurations such as title, logos etc.
 3. `Dockerfile` and `environment.yml` define how the container should be built
+4. llm_pgvector.env should be added manually  
 
 ## Usage
 
