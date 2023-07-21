@@ -4,20 +4,19 @@ import openai
 import pandas as pd
 import pandas as pd
 import numpy as np
-
 import psycopg2
+from typing import List, Optional
+from dotenv import dotenv_values
 from psycopg2 import pool
 from psycopg2 import Error
 from pgvector.psycopg2 import register_vector
-
-from typing import List, Optional
-
 from langchain.docstore.document import Document
 from langchain.document_loaders.base import BaseLoader
 from langchain.prompts import PromptTemplate
+from langchain.llms import AzureOpenAI
+from langchain.chains.question_answering import load_qa_chain
 
-import os
-from dotenv import dotenv_values
+
 
 # Get the absolute path to the .env file in the streamlit_app subdirectory
 env_name = os.path.join(os.path.dirname(__file__), "llm_pgvector.env")
@@ -66,8 +65,8 @@ def retrieve_k_chunk(retrieve_k, questionEmbedding,ClientCode):
     # Build a connection string from the variables
     conn_string = "host={0} user={1} dbname={2} password={3} sslmode={4}".format(host, user, dbname, password, sslmode)
     connection = psycopg2.connect(conn_string)
-# Create a cursor after the connection
-# Register 'pgvector' type for the 'embedding' column
+    # Create a cursor after the connection
+    # Register 'pgvector' type for the 'embedding' column
     register_vector(connection)
     cursor = connection.cursor()
     print("ClientCode:", ClientCode)
@@ -121,9 +120,9 @@ def qna_llm(msg):
         context += row[0]
         context += "\n"
     print("Context Retrieved")
-    from langchain.llms import AzureOpenAI
+    
     llm= AzureOpenAI(deployment_name=config['OPENAI_MODEL_COMPLETION'], model_name=config['OPENAI_MODEL_EMBEDDING'], temperature=0)
-    from langchain.chains.question_answering import load_qa_chain
+
     loader = TextFormatter(context)
     ### Question Prompt Template
     question_prompt_template = """Use the context document to find relevant text and answer the question. Use the PageNumber and LineNumber and show it as a reference to the answer. 
