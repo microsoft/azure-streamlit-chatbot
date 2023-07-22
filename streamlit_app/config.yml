@@ -1,11 +1,11 @@
 ---
 streamlit:
-  title: "Applied AI team's bot"
-  tab_title: "LLM bot"
-  logo: "./streamlit_app/images/Microsoft_logo.png"
-  page_icon: "./streamlit_app/images/Microsoft_logo.png"
+  title: "CVS - Customer Care Assistant"
+  tab_title: "CVS bot"
+  logo: "./streamlit_app/images/cvs_logo.png"
+  page_icon: "./streamlit_app/images/cvs_logo.png"
   avatar: "./streamlit_app/images/openai.png"
-  assistant_intro_message: "Hi there :wave:, I'm an AI assistant powered by Large Language Models. How can I help?" 
-  about: "this is a demo bot, author: Applied AI team"
+  assistant_intro_message: "Hi there :wave:, I'm an AI assistant for CVS Customer Care Representatives. I can look up information through Customer Information Documents to help. Please provide the client code as in Client Code: <Client Code>. Then, ask any questions. For example: \"Client Code: X5447, what is the refill policy?\"" 
+  about: "A demo of an AI assistant for Customer Care Representatives. Powered by Azure OpenAI Large Language Models and search using native vector search capabilities on PostGres, authors: CVS + Azure Data/Applied AI teams"
 azure:
   dummy: "test"
