@@ -5,8 +5,6 @@ import openai
 
 from pg_qna import qna_llm
 
-
-
 # Read config yaml file
 with open('./streamlit_app/config.yml', 'r') as file:
     config = yaml.safe_load(file)
@@ -24,11 +22,12 @@ st.set_page_config(
     )
 
 # Set sidebar
+st.sidebar.image(config['streamlit']['logo'], width=50)
 st.sidebar.title("About")
 st.sidebar.info(config['streamlit']['about'])
 
 # Set logo
-st.image(config['streamlit']['logo'], width=50)
+#st.image(config['streamlit']['logo'], width=50)
 
 # Set page title
 st.title(title)
